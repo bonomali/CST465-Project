@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../CSS/DefaultStyles.css" />
+    <title>CST 465 Assignment 1</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <header>
+        <h1>The Header Section</h1>
+        <p>This is a practice of the header section</p>
+    </header>
+    <nav id="blogs">
+        <h3>Blogs on ASP.Net</h3>
+        <ul id="linksList">
+            <li><a href="https://weblogs.asp.net/">ASP.Net Community Blog</a></li>
+            <li><a href="https://blogs.msdn.microsoft.com/webdev/">.Net Web Development and Tools Blog</a></li>
+            <li><a href="https://blog.newrelic.com/2014/03/12/20-net-developers-follow-online/">20 .Net Developers to Follow Online</a></li>
+        </ul>
+    </nav>
+    <main id="infoForm">
+        <h3>Information Form</h3>
+        <form action="http://www.oit.edu/cst465" method="post">
+            <label for="uxName">Name</label>
+            <input type="text" id="uxName" name="Name" />
+            <br />
+            <label for="uxEmailAddress">Email Address</label>
+            <input type="text" id="uxEmailAddress" name="EmailAddress" />
+            <br />
+            <label for="uxUserType">User Type</label>
+            <select id="uxUserType" name="UserType">
+                <option value="0">Student</option>
+                <option value="1">Faculty/Staff</option>
+            </select>
+            <br />
+            <label for="uxHobby">Hobby</label>
+            <input type="text" id="uxHobby" name="Hobby" />
+            <br />
+            <label for="uxBand">Band</label>
+            <input type="text" id="uxBand" name="Band" />
+            <br />
+            <label for="uxBiography">Biography</label>
+            <textarea id="uxBiography" name="Biography"></textarea>
+            <br /><br />
+            <table>
+                <thead>
+                    <tr class="headinng">
+                        <th>Course Prefix</th>
+                        <th>Course Number</th>
+                        <th>Course Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="dataRows">
+                        <td><input type="text" id="uxCoursePrefix" name="CoursePrefix" /></td>
+                        <td> <input type="text" id="uxCourseNumber" name="CourseNumber" /></td>
+                        <td><input type="text" id="uxCourseDescription" name="CourseDescription" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="hidden" id="uxNickname" name="Nickname" value="GaryGuy" />
+            <br />
+            <input type="submit" id="uxSubmit" value="Save Profile" />
+        </form>
+    </main>
+    <section id="section1">
+        <h3>This is a Section</h3>
+        <p>This is a section</p>
+    </section>
+    <footer>
+        <p>
+            Author: Stephanie Vetter-Derosier <br />
+            Contact Information: <a href="mailto:stephanie.vetter@oit.edu"> stephanie.vetter@oit.edu </a>
+        </p>
+    </footer>
+</body>
+</html>
