@@ -1,11 +1,17 @@
 ﻿html{background-color: lightgoldenrodyellow; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-nav#blogs{float: left; width: 25%;}
+nav#blogs{float: left; width: 25%; margin-bottom: 20px;}
 ul#linksList{padding-left:15px; font-size: 14px}
 main#infoForm{float: right; width: 75%;}
-footer{clear: both; padding-top: 60px}
+section#section1{width: 20%;}
+footer#footer{clear: both; padding-top: 60px}
 label{ text-align:right;
   padding-right:10px;
   padding-bottom:5px;
   display:inline-block;
   min-width:100px;}
 #uxSubmit{position:relative; left: 15%;}
+#uxCoursePrefix{width: 40px; margin-left: 30px;}
+#uxCourseNumber{width: 60px; margin-left:30px;}
+#uxCourseDescription{width: 100px; margin-left: 15px;}
+
+
