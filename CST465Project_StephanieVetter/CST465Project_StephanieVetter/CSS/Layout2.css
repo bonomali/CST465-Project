@@ -1,0 +1,7 @@
+﻿html{font-size: 16px; font-family: 'Times New Roman', Times, serif; background-image: url("http://oregontechcdn.azureedge.net/img/bg/bg-tile.jpg");}
+body{background-color:lightpink; max-width: 1000px; margin: 0 auto;}
+#pageLinks{list-style-type: none; margin: 0; padding: 0;}
+nav ul li{display:block; float: left; width: calc(100% / 4); box-sizing: border-box; border-width: 1px; border-style: solid; border-color:darkblue; text-align: center;}
+header{border: 1px; background-color:lightcyan;}
+footer{border: 1px; background-color:lightcyan;}
+main{padding-top: 15px; padding-bottom: 15px;}

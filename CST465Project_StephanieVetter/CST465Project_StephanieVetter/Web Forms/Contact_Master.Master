@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Contact_Master.master.cs" Inherits="CST465Project_StephanieVetter.Web_Forms.Contact_Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+   <form id="form1" runat="server">
+   <nav>
+        <asp:ContentPlaceHolder ID="nav" runat="server" />
+        <ul>
+            <li><a href="https://weblogs.asp.net/">ASP.Net Community Blog</a></li>
+            <li><a href="https://blogs.msdn.microsoft.com/webdev/">.Net Web Development and Tools Blog</a></li>
+            <li><a href="https://blog.newrelic.com/2014/03/12/20-net-developers-follow-online/">20 .Net Developers to Follow Online</a></li>
+        </ul> 
+    </nav>
+    <main>
+        <asp:ContentPlaceHolder ID="main" runat="server" />
+    </main>
+    <asp:Label ID="lblRequiredTextBox" AssociatedControlID="uxRequiredTextBox" Text="Required:" runat="server" />
+    <asp:TextBox ID="uxRequiredTextBox" Text="" runat="server" />
+    <asp:RequiredFieldValidator ID="requiredTextBox" ControlToValidate="uxRequiredTextBox" Text="*" Display="Dynamic" ErrorMessage="Required Field" runat="server" />
+    </form>
+</body>
+</html>

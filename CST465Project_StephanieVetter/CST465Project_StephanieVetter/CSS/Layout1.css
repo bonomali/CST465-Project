@@ -1,0 +1,12 @@
+﻿html {font-size: 16px; font-family: "Comic Sans MS", cursive, sans-serif;}
+#pageLinks{list-style-type:none; margin: 0; padding: 0;}
+nav #pageLinks li{border:solid; background: linear-gradient(to bottom, #cdcdcd, #fff); border-radius: 5px; padding: 7px;}
+footer{clear: both; background: #000; color: #fff; position: fixed; left: 0; bottom: 0; height: 50px; width: 100%;}
+p{margin-top: 0;}
+main{padding-bottom: 50px;}
+
+@media only screen and (min-width: 800px) {
+    nav{width:25%; max-width:300px; float: left;}
+    main{width: 75%; float: left;}
+}
+
