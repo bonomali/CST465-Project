@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web Forms/Contact_Master.Master" AutoEventWireup="true" CodeBehind="ValidateFormOutput.aspx.cs" Inherits="CST465Project_StephanieVetter.Web_Forms.ValidateFormOutput" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebForms/Contact_Master.Master" AutoEventWireup="true" CodeBehind="ValidateFormOutput.aspx.cs" Inherits="CST465Project_StephanieVetter.Web_Forms.ValidateFormOutput" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="nav" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
@@ -13,7 +13,7 @@
             <p>Favorite Color: <asp:Literal ID="uxFavoriteColor" runat="server" /></p>
         </div>
         <div>
-            <p>City:<asp:Literal ID="uxCity" runat="server" /></p>
+            <p>City: <asp:Literal ID="uxCity" runat="server" /></p>
         </div>
     </asp:PlaceHolder>
 </asp:Content>

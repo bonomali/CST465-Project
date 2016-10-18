@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Contact_Master.master.cs" Inherits="CST465Project_StephanieVetter.Web_Forms.Contact_Master" %>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
      <asp:ContentPlaceHolder ID="head" runat="server" />
@@ -19,9 +17,7 @@
     <main>
         <asp:ContentPlaceHolder ID="main" runat="server" />
     </main>
-    <asp:Label ID="lblRequiredTextBox" AssociatedControlID="uxRequiredTextBox" Text="Required:" runat="server" />
-    <asp:TextBox ID="uxRequiredTextBox" Text="" runat="server" />
-    <asp:RequiredFieldValidator ID="requiredTextBox" ControlToValidate="uxRequiredTextBox" Text="*" Display="Dynamic" ErrorMessage="Required Field" runat="server" />
+
     </form>
 </body>
 </html>

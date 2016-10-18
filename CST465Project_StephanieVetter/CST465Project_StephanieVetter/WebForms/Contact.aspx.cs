@@ -26,6 +26,8 @@ namespace CST465Project_StephanieVetter.Web_Forms
         }
         protected void uxSubmit_Click(object sender, EventArgs e)
         {
+            uxEventOutput.Text += "<br/>" + "uxSubmit_Click";
+
             userInput.Append("<br/>" + "Name: " + uxName.Text + "<br/>");
             userInput.Append("Priority: " + uxPriority.SelectedValue + "<br/>");
             userInput.Append("Subject: " + uxSubject.Text + "<br/>");

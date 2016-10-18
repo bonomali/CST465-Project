@@ -24,7 +24,12 @@ namespace CST465Project_StephanieVetter.Web_Forms
                 uxInvalidDataArea.Visible = true;
             }
             else
+            {
+                uxName.Text = name;
+                uxFavoriteColor.Text = favColor;
+                uxCity.Text = city;
                 uxValidDataArea.Visible = true;
+            }
         }
     }
 }

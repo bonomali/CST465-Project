@@ -22,7 +22,7 @@ namespace CST465Project_StephanieVetter.Web_Forms
             queryString.Append("&favoritecolor=" + uxFavColor.Value);
             queryString.Append("&city=" + uxCity.Value);
 
-            Response.Redirect("~/Web Forms/ValidateFormOutput.aspx" + queryString);   
+            Response.Redirect("~/WebForms/ValidateFormOutput.aspx" + queryString);   
         }
     }
 }

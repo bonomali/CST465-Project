@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace CST465Project_StephanieVetter.Web_Forms
 {
-    public partial class Contact_Master : System.Web.UI.MasterPage
+    public partial class ValidatedTextBox : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
         public String LabelText
         {
             get { return lblRequiredTextBox.Text; }

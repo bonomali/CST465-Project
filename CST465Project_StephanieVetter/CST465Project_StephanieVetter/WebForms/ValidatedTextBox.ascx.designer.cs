@@ -10,51 +10,33 @@
 namespace CST465Project_StephanieVetter.Web_Forms {
     
     
-    public partial class ValidateForm {
+    public partial class ValidatedTextBox {
         
         /// <summary>
-        /// reqTextBoxPanel control.
+        /// lblRequiredTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel reqTextBoxPanel;
+        protected global::System.Web.UI.WebControls.Label lblRequiredTextBox;
         
         /// <summary>
-        /// uxName control.
+        /// uxRequiredTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CST465Project_StephanieVetter.Web_Forms.Contact_Master uxName;
+        protected global::System.Web.UI.WebControls.TextBox uxRequiredTextBox;
         
         /// <summary>
-        /// uxFavColor control.
+        /// requiredTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CST465Project_StephanieVetter.Web_Forms.Contact_Master uxFavColor;
-        
-        /// <summary>
-        /// uxCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CST465Project_StephanieVetter.Web_Forms.Contact_Master uxCity;
-        
-        /// <summary>
-        /// uxSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uxSubmit;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredTextBox;
     }
 }
