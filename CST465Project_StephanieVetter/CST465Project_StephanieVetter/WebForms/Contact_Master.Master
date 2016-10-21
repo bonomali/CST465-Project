@@ -6,7 +6,10 @@
 </head>
 <body>
    <form id="form1" runat="server">
-   <nav>
+    <main>
+        <asp:ContentPlaceHolder ID="main" runat="server" />
+    </main>
+    <nav>
         <asp:ContentPlaceHolder ID="nav" runat="server" />
         <ul>
             <li><a href="https://weblogs.asp.net/">ASP.Net Community Blog</a></li>
@@ -14,10 +17,6 @@
             <li><a href="https://blog.newrelic.com/2014/03/12/20-net-developers-follow-online/">20 .Net Developers to Follow Online</a></li>
         </ul> 
     </nav>
-    <main>
-        <asp:ContentPlaceHolder ID="main" runat="server" />
-    </main>
-
     </form>
 </body>
 </html>

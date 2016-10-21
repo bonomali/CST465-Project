@@ -16,11 +16,11 @@ namespace CST465Project_StephanieVetter.Web_Forms
         {
             uxEventOutput.Text += "<br/>" + "Page Load";
         }
-        protected void _Init(EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
             uxEventOutput.Text += "<br/>" + "Page Init";
         }
-        protected void _OnPreRender(EventArgs e)
+        protected void Page_PreRender(object sender, EventArgs e)
         {
             uxEventOutput.Text += "<br/>" + "PreRender";
         }
