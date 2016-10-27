@@ -43,3 +43,4 @@ C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CS
 C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\System.Web.Mvc.xml
 C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\obj\Debug\CST465Lab4_StephanieVetter.dll
 C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\obj\Debug\CST465Lab4_StephanieVetter.pdb
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\obj\Debug\CST465Lab4_StephanieVetter.csprojResolveAssemblyReference.cache

@@ -1,0 +1,27 @@
+﻿/*Palette UID: 1550u0kllll9SiXfBk8r4myyrnJ*/
+html{background-color:#FFE4E1;}
+ul{background-color:#822B66; list-style-type:none; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin:10px 0; padding:16px 0; overflow:hidden}
+#menu{text-align:center;}
+#menuLinks li{display:block; float:left; border-right:1px solid #bbb;}
+#menuLinks li:last-child{border-right:none;}
+#menuLinks li a{text-align:center; padding:14px 25px; text-decoration:none; color:deeppink;}
+#menuLinks #contactLink{float:right;}
+#menuLinks li:hover a{background-color:#7B3F67; color:hotpink}
+#companySlogan{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:24px; font-style:italic; color:#891563; margin:15px 5px 30px 5px; clear:both}
+#companyLogo img{float:left; width:5%; height:auto;}
+#companyName{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:42px; color:#891563; float:left; padding:30px 5px; text-shadow: 2px 2px #FF69B4;}
+#headline{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:16px; color:#900061; margin:0 5px; padding:0;}
+main{padding:40px 0;}
+footer{clear: both; background: #BBB; color: #891563; position: fixed; left: 0; bottom: 0; height: 50px; width: 100%; box-sizing:border-box; padding-left:5px;}
+body{max-width:1200px; margin:auto;}
+h1{font-weight:300; font-family:Arial; color:#900061}
+h2{font-weight:200; font-family:'Comic Sans MS'; color:deeppink;}
+h3{font-weight:100; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:grey;}
+
+@media only screen and (max-width: 1000px) {
+     #companyLogo img{width:50px; height:auto;}
+}
+@media only screen and (max-width: 481px) {
+    #menuLinks li{border:none; clear:both; padding:10px 2px;}
+    #menuLinks #contactLink{float:left}
+}

@@ -8,16 +8,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel = "stylesheet" type = "text/css" href = "../CSS/DefaultStyles.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <header>
-        <span>PenandSeller <br />
-            Prices and service so good you'll think we're magic.com
-        </span>
-        @RenderSection("header", required: false)
+        <<span id="companyLogo"><img alt="company image" src="~/img/465PenandSeller.png"/> </span>
+        <span id="companyName">PenandSeller.com</span><br />
+        <div id="companySlogan">Prices and service so good you'll think we're magic!</div>
+        <div id="headline">@RenderSection("header", required: false)</div>
     </header>
+    <nav id="menu">
+        <ul id="menuLinks">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About Our Company", "Index", "About")</li>
+            <li id="contactLink">@Html.ActionLink("Contact Us", "Index", "Contact")</li>
+        </ul>
+    </nav>
     <main>@RenderBody()</main>
-    @RenderSection("footer", required: false)
+    <footer>@RenderSection("footer", required: false)</footer>
 </body>
 </html>
