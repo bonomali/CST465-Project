@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "All Blogs";
+}
+
+@model List<BlogPost>
+
+<h1>Blogs</h1>
+@foreach(BlogPost b in Model)
+{
+    <div>
+        <h2>@b.Title</h2>
+        @Html.ActionLink("Edit Post", "Edit", new { ID=b.ID})
+    </div>
+}
+@Html.ActionLink("Add Post", "Add", "Blog")
+
+
