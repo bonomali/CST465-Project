@@ -8,10 +8,10 @@ ul{background-color:#822B66; list-style-type:none; font-family:Impact, Haettensc
 #menuLinks #contactLink{float:right;}
 #menuLinks li:hover a{background-color:#7B3F67; color:hotpink}
 #companySlogan{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:24px; font-style:italic; color:#891563; margin:15px 5px 30px 5px; clear:both}
-#companyLogo img{float:left; width:5%; height:auto;}
+#companyLogo img{float:left; width:5%; height:auto; padding: 5px 0 0 0;}
 #companyName{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:42px; color:#891563; float:left; padding:30px 5px; text-shadow: 2px 2px #FF69B4;}
 #headline{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:16px; color:#900061; margin:0 5px; padding:0;}
-main{padding:40px 0;}
+main{padding:5px 0 40px 0;}
 footer{clear: both; background: #BBB; color: #891563; position: fixed; left: 0; bottom: 0; height: 50px; width: 100%; box-sizing:border-box; padding-left:5px;}
 body{max-width:1200px; margin:auto;}
 h1{font-weight:300; font-family:Arial; color:#900061}

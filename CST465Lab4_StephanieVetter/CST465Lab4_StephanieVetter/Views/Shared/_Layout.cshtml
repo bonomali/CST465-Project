@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -13,7 +12,7 @@
 </head>
 <body>
     <header>
-        <<span id="companyLogo"><img alt="company image" src="~/img/465PenandSeller.png"/> </span>
+        <span id="companyLogo"><img alt="company image" src="~/img/465PenandSeller.png"/> </span>
         <span id="companyName">PenandSeller.com</span><br />
         <div id="companySlogan">Prices and service so good you'll think we're magic!</div>
         <div id="headline">@RenderSection("header", required: false)</div>
@@ -22,6 +21,7 @@
         <ul id="menuLinks">
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
             <li>@Html.ActionLink("About Our Company", "Index", "About")</li>
+            @*<li>@Html.ActionLink("Blog", "Index", "Blog")</li>*@
             <li id="contactLink">@Html.ActionLink("Contact Us", "Index", "Contact")</li>
         </ul>
     </nav>
