@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CST465Lab4_StephanieVetter.Controllers
+namespace CST465Lab4_StephanieVetter
 {
     public class BlogController : Controller
     {
