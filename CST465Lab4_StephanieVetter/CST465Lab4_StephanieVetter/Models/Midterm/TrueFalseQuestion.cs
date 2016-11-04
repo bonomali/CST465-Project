@@ -13,4 +13,9 @@ namespace CST465Lab4_StephanieVetter
         [RegularExpression(@"True + False", ErrorMessage = "Must answer 'True' or 'False'")]
         override public string Answer { get; set; }
     }
+    public enum Choices
+    {
+        True,
+        False
+    }
 }

@@ -1,17 +1,11 @@
-﻿
-@{
-    Layout = null;
+﻿@model List<TestQuestion>
+
+@using (Html.BeginForm())
+{
+    foreach (var question in Model)
+    {
+        <h2>@question.ID. @question.Question</h2>
+        <h3>@question.Answer</h3>
+        <br />
+    }
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>DisplayResults</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
