@@ -1,10 +1,17 @@
 ﻿@model List<TestQuestion>
 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Take Test";
+}
+
 @using (Html.BeginForm())
 {
+ //   @Html.EditorForModel()
+
     foreach(var question in Model)
     {
-        <div id="@question.ID">
+        <div class="field" id="@question.ID">
             @Html.Partial("~/Views/Midterm/EditorTemplates/" + question.Type + ".cshtml", question)
         </div>
     }

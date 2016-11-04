@@ -14,5 +14,7 @@ namespace CST465Lab4_StephanieVetter
         public string Type { get; set; }
         public virtual string Answer { get; set; }
         public List<string> Choices { get; set; }
+
+        public List<TestQuestion> Tet { get; set; }
     }
 }

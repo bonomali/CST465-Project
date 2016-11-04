@@ -37,19 +37,19 @@ namespace CST465Lab4_StephanieVetter
         {
             test = GetQuestions();
 
-            for(int i = 0; i < test.Count || i < model.Count; i++)
-            {
-             
-                if (test[i].ID == model[i].ID)
-                    model[i].Answer = test[i].Answer;
-            }
-
-            for(int i = 0; i < model.Count; i++)
+            for (int i = 0; i < model.Count; i++)
             {
                 if (!ModelState.IsValid)
                 {
                     return View(model);
                 }
+            }
+
+            for (int i = 0; i < test.Count || i < model.Count; i++)
+            {
+             
+                if (test[i].ID == model[i].ID)
+                    model[i].Answer = test[i].Answer;
             }
 
             TempData["TestData"] = model;

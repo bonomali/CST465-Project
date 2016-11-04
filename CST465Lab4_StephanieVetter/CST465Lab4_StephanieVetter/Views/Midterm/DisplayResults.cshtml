@@ -1,5 +1,10 @@
 ﻿@model List<TestQuestion>
 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Display Results";
+}
+
 @using (Html.BeginForm())
 {
     foreach (var question in Model)
