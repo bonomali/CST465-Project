@@ -9,14 +9,15 @@ namespace CST465Lab4_StephanieVetter
 {
     public class MultipleChoiceQuestion : TestQuestion
     {
-        [Required]
-        override public string Answer { get; set; }
-
-        public List<SelectListItem> items = new List<SelectListItem>()
+        public MultipleChoiceQuestion(QuestionData quest)
         {
-            (new SelectListItem { Text = "True", Value = "True" }),
-            (new SelectListItem { Text = "False", Value = "False" })
-        };
+            this.ID = quest.ID;
+            this.Question = quest.Question;
+            this.Choices = quest.Choices;
+        }
+
+        [Required(ErrorMessage ="Answer Required")]
+        override public string Answer { get; set; }
     }
 
 

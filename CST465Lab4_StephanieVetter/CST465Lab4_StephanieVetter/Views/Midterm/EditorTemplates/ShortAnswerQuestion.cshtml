@@ -2,6 +2,10 @@
 
 <div>
     <h2>@Model.ID. @Model.Question</h2>
-    @Html.TextBoxFor(m => m.Answer, new { @class = "ShortAnswerQuestion" })
+
+    @Html.HiddenFor(m => m.ID, new { Value = Model.ID })
+    @Html.TextBoxFor(m => m.Answer) 
+    <br />
+    @Html.ValidationMessageFor(m => m.Answer)
 </div>
 

@@ -7,14 +7,11 @@
 
 @using (Html.BeginForm())
 {
- //   @Html.EditorForModel()
-
-    foreach(var question in Model)
-    {
-        <div class="field" id="@question.ID">
-            @Html.Partial("~/Views/Midterm/EditorTemplates/" + question.Type + ".cshtml", question)
+    @Html.ValidationSummary(true)
+        <div class="field">
+              @Html.EditorForModel() 
         </div>
-    }
+   
     <br />
     <button type="submit">Submit</button>
 }

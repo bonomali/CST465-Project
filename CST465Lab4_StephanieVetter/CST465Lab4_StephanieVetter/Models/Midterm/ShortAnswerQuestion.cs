@@ -8,7 +8,13 @@ namespace CST465Lab4_StephanieVetter
 {
     public class ShortAnswerQuestion : TestQuestion
     {
-        [Required]
+        public ShortAnswerQuestion(QuestionData quest)
+        {
+            this.ID = quest.ID;
+            this.Question = quest.Question;
+            this.Choices = quest.Choices;
+        }
+        [Required(ErrorMessage ="Answer Required")]
         [StringLength(100, ErrorMessage = "Max characters: 100")]
         override public string Answer { get; set; }
     }

@@ -2,7 +2,11 @@
 
 <div>
     <h2>@Model.ID. @Model.Question</h2>
+
+    @Html.HiddenFor(m => m.ID, new { Value = Model.ID })
     @Html.DropDownListFor(m => m.Answer,
-                        new SelectList(Enum.GetValues(typeof(Choices))),
-                        "Select Answer")
+                        new SelectList(Enum.GetValues(typeof(Choices))),"Select Answer") 
+    <br />
+    @Html.ValidationMessageFor(m => m.Answer)
+    
 </div>

@@ -13,8 +13,21 @@ namespace CST465Lab4_StephanieVetter
 
         public List<TestQuestion> GetQuestions()
         {
-            string json = System.IO.File.ReadAllText(@"C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\JSON\Midterm.json");
-            questions = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<List<TestQuestion>>(json);
+            List<QuestionData> temp = new List<QuestionData>();
+            string json = System.IO.File.ReadAllText(Server.MapPath("/JSON/Midterm.json"));
+            temp = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<List<QuestionData>>(json);
+
+            for(int i = 0; i < temp.Count; i++)
+            {
+                if (temp[i].Type.Equals("TrueFalseQuestion"))
+                    questions.Add(new TrueFalseQuestion(temp[i]));
+                else if(temp[i].Type.Equals("LongAnswerQuestion"))
+                        questions.Add(new LongAnswerQuestion(temp[i]));
+                else if (temp[i].Type.Equals("ShortAnswerQuestion"))
+                    questions.Add(new ShortAnswerQuestion(temp[i]));
+                else if (temp[i].Type.Equals("MultipleChoiceQuestion"))
+                    questions.Add(new MultipleChoiceQuestion(temp[i]));
+            }
 
             return questions;
         }
@@ -27,9 +40,9 @@ namespace CST465Lab4_StephanieVetter
         [HttpGet]
         public ActionResult TakeTest()
         {
-            List<TestQuestion> q = GetQuestions();
+            GetQuestions();
 
-            return View(q);
+            return View(questions);
         }
 
         [HttpPost]
@@ -37,23 +50,19 @@ namespace CST465Lab4_StephanieVetter
         {
             test = GetQuestions();
 
-            for (int i = 0; i < model.Count; i++)
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                {
-                    return View(model);
-                }
+                return RedirectToAction("TakeTest");
             }
 
             for (int i = 0; i < test.Count || i < model.Count; i++)
             {
              
                 if (test[i].ID == model[i].ID)
-                    model[i].Answer = test[i].Answer;
+                    test[i].Answer = model[i].Answer;
             }
-
-            TempData["TestData"] = model;
-
+            TempData["TestData"] = test;
+        
             return RedirectToAction("DisplayResults");
         }
 
