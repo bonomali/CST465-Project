@@ -1,9 +1,9 @@
-﻿@model TestQuestion
+﻿@model TrueFalseQuestion
 
 <div>
     <h2>@Model.ID. @Model.Question</h2>
 
-    @Html.HiddenFor(m => m.ID, new { Value = Model.ID })
+    @Html.HiddenFor(m => m.ID)
     @Html.DropDownListFor(m => m.Answer,
                         new SelectList(Enum.GetValues(typeof(Choices))),"Select Answer") 
     <br />

@@ -12,7 +12,6 @@ namespace CST465Lab4_StephanieVetter
         public int ID { get; set; }
         public string Question { get; set; }
         public virtual string Answer { get; set; }
-        public List<string> Choices { get; set; }
     }
 
     public class QuestionData

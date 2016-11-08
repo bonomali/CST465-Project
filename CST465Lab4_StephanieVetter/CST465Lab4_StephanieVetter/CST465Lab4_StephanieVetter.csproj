@@ -122,7 +122,9 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -171,6 +173,8 @@
     <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
     <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
     <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
+    <Content Include="Views\Blog\DisplayTemplates\SingleBlogPostView.cshtml" />
+    <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,7 +187,6 @@
     <Folder Include="Code\DataObjects\" />
     <Folder Include="HTMLHelpers\" />
     <Folder Include="js\" />
-    <Folder Include="Views\Blog\DisplayTemplates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

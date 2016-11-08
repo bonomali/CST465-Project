@@ -22,6 +22,7 @@ namespace CST465Lab4_StephanieVetter
 
             return View(b);
         }
+
         public ActionResult Add()
         {
             BlogPostModel model = new BlogPostModel();
@@ -86,20 +87,12 @@ namespace CST465Lab4_StephanieVetter
             return RedirectToAction("Index");
         }
 
-        public ActionResult BlogPostModel(int id)
-        {
-            List<BlogPost> blogs = blog.GetList(); 
+        public ActionResult SingleBlogPostView(int id)
+        { 
             BlogPost b = new BlogPost();
+            b = blog.Get(id);
 
-            for(int i = 0; i < blogs.Count; i++)
-            {
-                if(blogs[i].ID == id)
-                {
-                    b = blogs[i];
-                }
-            }
             return View(b);
         }
-
     }
 }

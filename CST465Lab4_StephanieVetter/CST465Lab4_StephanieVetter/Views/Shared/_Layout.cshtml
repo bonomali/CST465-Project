@@ -21,12 +21,13 @@
         <ul id="menuLinks">
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
             <li>@Html.ActionLink("About Our Company", "Index", "About")</li>
-            @*<li>@Html.ActionLink("Blog", "Index", "Blog")</li>*@
+            <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
             <li id="contactLink">@Html.ActionLink("Contact Us", "Index", "Contact")</li>
         </ul>
     </nav>
     <main>@RenderBody()</main>
     <footer>@RenderSection("footer", required: false)</footer>
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>

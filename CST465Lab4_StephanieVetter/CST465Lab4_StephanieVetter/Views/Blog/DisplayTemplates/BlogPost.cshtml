@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Blog Post";
+}
+
+@model BlogPost
+
+<div>
+    <h1>@Html.DisplayFor(m => m.Title)</h1>
+    <h2>@Html.DisplayFor(m => m.Author) 
+        @Html.DisplayFor(m => m.Timestamp.ToString())</h2>
+    <p>@Html.DisplayFor(m => m.Content)</p>
+    <br />
+
+    @Html.ActionLink("Blogs Home", "Index", "BlogController")
+</div>

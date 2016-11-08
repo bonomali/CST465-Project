@@ -13,10 +13,9 @@ namespace CST465Lab4_StephanieVetter
         {
             this.ID = quest.ID;
             this.Question = quest.Question;
-            this.Choices = quest.Choices;
         }
         [Required(ErrorMessage ="Answer Required")]
-        [RegularExpression(@"True + False", ErrorMessage = "Must answer 'True' or 'False'")]
+        //[RegularExpression((True) | (False), ErrorMessage = "Must answer True or False")]
         override public string Answer { get; set; }
     }
     public enum Choices

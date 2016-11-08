@@ -1,17 +1,22 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit Blog";
 }
 
-<!DOCTYPE html>
+@model BlogPostModel
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>BlogPostModel</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+
+@Html.LabelFor(m => m.Title)
+@Html.TextBoxFor(m => m.Title)
+@Html.ValidationMessageFor(m => m.Title)
+<br />
+
+@Html.LabelFor(m => m.Author)   
+@Html.TextBoxFor(m => m.Author)
+@Html.ValidationMessageFor(m => m.Author)
+<br />
+
+@Html.LabelFor(m => m.Content)
+@Html.TextAreaFor(m => m.Content)
+@Html.ValidationMessageFor(m => m.Content)
+

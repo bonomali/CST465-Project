@@ -1,9 +1,9 @@
-﻿@model TestQuestion
+﻿@model ShortAnswerQuestion
 
 <div>
     <h2>@Model.ID. @Model.Question</h2>
 
-    @Html.HiddenFor(m => m.ID, new { Value = Model.ID })
+    @Html.HiddenFor(m => m.ID)
     @Html.TextBoxFor(m => m.Answer) 
     <br />
     @Html.ValidationMessageFor(m => m.Answer)

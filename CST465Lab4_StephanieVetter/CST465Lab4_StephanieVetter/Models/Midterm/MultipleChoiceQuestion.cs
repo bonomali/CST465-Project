@@ -15,6 +15,7 @@ namespace CST465Lab4_StephanieVetter
             this.Question = quest.Question;
             this.Choices = quest.Choices;
         }
+        public List<string> Choices { get; set; }
 
         [Required(ErrorMessage ="Answer Required")]
         override public string Answer { get; set; }
