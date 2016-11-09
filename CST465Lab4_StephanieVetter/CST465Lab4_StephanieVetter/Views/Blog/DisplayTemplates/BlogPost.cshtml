@@ -4,13 +4,14 @@
 }
 
 @model BlogPost
+@{ string timeStamp = Model.Timestamp.ToString(); }
 
 <div>
     <h1>@Html.DisplayFor(m => m.Title)</h1>
-    <h2>@Html.DisplayFor(m => m.Author) 
-        @Html.DisplayFor(m => m.Timestamp.ToString())</h2>
+    <h2>@Html.DisplayFor(m => m.Author)</h2>
+    <h3>@timeStamp</h3>
     <p>@Html.DisplayFor(m => m.Content)</p>
     <br />
 
-    @Html.ActionLink("Blogs Home", "Index", "BlogController")
+    @Html.ActionLink("Blogs Home", "Index", "Blog")
 </div>

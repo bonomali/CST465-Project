@@ -1,10 +1,14 @@
 ﻿@model IEnumerable<BlogPost>
 
-@foreach(var b in Model)
+@foreach (var b in Model)
 {
-    @Html.ActionLink(b.Title, "SingleBlogPostView", "BlogController", new { @id = b.ID })
-    @Html.Display(b.Timestamp.ToString())  
-    <br />
-    @Html.ActionLink("Edit Post", "Edit", new { ID = b.ID })
+    <nav>
+        @{ string timeStamp = b.Timestamp.ToString(); }
+        <ul id="blogLinks">
+            <li>@Html.ActionLink(b.Title, "SingleBlogPostView", new { ID = b.ID })</li>
+            <li>@timeStamp</li>
+            <li>@Html.ActionLink("Edit Post", "Edit", new { ID = b.ID })</li>
+        </ul>
+    </nav>
     <br /><br />
 }

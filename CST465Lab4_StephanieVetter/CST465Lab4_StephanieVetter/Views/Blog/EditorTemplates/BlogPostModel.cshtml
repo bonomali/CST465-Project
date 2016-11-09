@@ -5,18 +5,17 @@
 
 @model BlogPostModel
 
-
-@Html.LabelFor(m => m.Title)
+@Html.LabelFor(m => m.Title, new { @class = "blog" })
 @Html.TextBoxFor(m => m.Title)
 @Html.ValidationMessageFor(m => m.Title)
 <br />
 
-@Html.LabelFor(m => m.Author)   
+@Html.LabelFor(m => m.Author, new { @class = "blog" })   
 @Html.TextBoxFor(m => m.Author)
 @Html.ValidationMessageFor(m => m.Author)
 <br />
 
-@Html.LabelFor(m => m.Content)
+@Html.LabelFor(m => m.Content, new { @class = "blog" })
 @Html.TextAreaFor(m => m.Content)
 @Html.ValidationMessageFor(m => m.Content)
 

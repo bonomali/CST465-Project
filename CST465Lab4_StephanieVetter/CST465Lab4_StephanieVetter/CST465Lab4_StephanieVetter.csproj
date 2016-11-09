@@ -173,7 +173,7 @@
     <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
     <Content Include="Views\Blog\EditorTemplates\BlogPostModel.cshtml" />
     <Content Include="Views\Shared\_BlogPostLinkList.cshtml" />
-    <Content Include="Views\Blog\DisplayTemplates\SingleBlogPostView.cshtml" />
+    <Content Include="Views\Blog\SingleBlogPostView.cshtml" />
     <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
