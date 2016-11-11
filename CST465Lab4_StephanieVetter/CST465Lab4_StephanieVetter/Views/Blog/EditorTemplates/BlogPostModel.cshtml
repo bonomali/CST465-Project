@@ -1,9 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Edit Blog";
-}
-
-@model BlogPostModel
+﻿@model BlogPostModel
 
 @Html.LabelFor(m => m.Title, new { @class = "blog" })
 @Html.TextBoxFor(m => m.Title)

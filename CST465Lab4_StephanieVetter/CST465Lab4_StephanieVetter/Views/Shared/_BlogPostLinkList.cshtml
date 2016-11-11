@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<BlogPost>
 
-@foreach (var b in Model)
+@if (Model != null)
 {
+    foreach (var b in Model)
+    {
     <nav>
         @{ string timeStamp = b.Timestamp.ToString(); }
         <ul id="blogLinks">
@@ -11,4 +13,5 @@
         </ul>
     </nav>
     <br /><br />
+   }
 }

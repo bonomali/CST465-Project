@@ -9,16 +9,17 @@ namespace CST465Lab4_StephanieVetter
 {
     public class BlogController : Controller
     {
-        private IDataEntityRepository<BlogPost> blog;
+        private IDataEntityRepository<BlogPost> _blog;
 
-        public BlogController()
+        public BlogController(IDataEntityRepository<BlogPost> repo)
         {
-            blog = new BlogDBRepository();
+            //_blog = new BlogDBRepository();
+            _blog = repo;
         }
         // GET: Blog
         public ActionResult Index()
         {
-            List<BlogPost> b = blog.GetList();
+            List<BlogPost> b = _blog.GetList();
 
             return View(b);
         }
@@ -42,7 +43,7 @@ namespace CST465Lab4_StephanieVetter
                 b.Content = model.Content;
                 b.Author = model.Author;
 
-                blog.Save(b);
+                _blog.Save(b);
             }
             else
             {
@@ -54,7 +55,7 @@ namespace CST465Lab4_StephanieVetter
         public ActionResult Edit(int id)
         {
             BlogPost b = new BlogPost();
-            b = blog.Get(id);
+            b = _blog.Get(id);
 
             BlogPostModel model = new BlogPostModel();
             model.ID = b.ID;
@@ -77,7 +78,7 @@ namespace CST465Lab4_StephanieVetter
                 b.Content = model.Content;
                 b.Author = model.Author;
 
-                blog.Save(b);
+                _blog.Save(b);
             }
             else
             {
@@ -90,7 +91,7 @@ namespace CST465Lab4_StephanieVetter
         public ActionResult SingleBlogPostView(int id)
         { 
             BlogPost b = new BlogPost();
-            b = blog.Get(id);
+            b = _blog.Get(id);
 
             return View(b);
         }

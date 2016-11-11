@@ -13,6 +13,7 @@ namespace CST465Lab4_StephanieVetter
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            UnityConfig.RegisterComponents();
         }
     }
 }

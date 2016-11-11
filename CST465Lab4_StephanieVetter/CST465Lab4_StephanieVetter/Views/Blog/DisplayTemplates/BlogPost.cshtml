@@ -1,9 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Blog Post";
-}
-
-@model BlogPost
+﻿@model BlogPost
 @{ string timeStamp = Model.Timestamp.ToString(); }
 
 <div>
@@ -12,6 +7,4 @@
     <h3>@timeStamp</h3>
     <p>@Html.DisplayFor(m => m.Content)</p>
     <br />
-
-    @Html.ActionLink("Blogs Home", "Index", "Blog")
 </div>

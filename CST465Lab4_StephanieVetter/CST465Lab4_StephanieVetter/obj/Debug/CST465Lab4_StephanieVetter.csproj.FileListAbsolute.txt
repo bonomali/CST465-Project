@@ -44,3 +44,13 @@ C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CS
 C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\obj\Debug\CST465Lab4_StephanieVetter.dll
 C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\obj\Debug\CST465Lab4_StephanieVetter.pdb
 C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\obj\Debug\CST465Lab4_StephanieVetter.csprojResolveAssemblyReference.cache
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.Unity.dll
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Unity.Mvc5.dll
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.Unity.xml
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\Stephanie\Documents\GitHub\CST465-Project\CST465Lab4_StephanieVetter\CST465Lab4_StephanieVetter\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml

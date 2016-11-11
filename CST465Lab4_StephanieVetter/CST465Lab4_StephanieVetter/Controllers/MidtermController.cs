@@ -45,6 +45,7 @@ namespace CST465Lab4_StephanieVetter
             return View(questions);
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult TakeTest(List<TestQuestion> model)
         {

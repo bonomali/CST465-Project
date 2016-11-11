@@ -7,9 +7,11 @@
 
 @using (Html.BeginForm())
 {
-        <div class="field">
-              @Html.EditorForModel() 
-        </div>
+    @Html.AntiForgeryToken()
+        
+    <div class="field">
+         @Html.EditorForModel() 
+    </div>
    
     <br />
     <button type="submit">Submit</button>
