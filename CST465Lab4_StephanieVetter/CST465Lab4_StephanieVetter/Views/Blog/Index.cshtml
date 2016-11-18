@@ -8,14 +8,8 @@
 <h1>View/Edit Blogs</h1>
 @Html.Partial("~/Views/Shared/_BlogPostLinkList.cshtml", Model)
 
-@*<h1>Edit Blog</h1>
-@foreach(BlogPost b in Model)
-{
-    <div>
-        <h2>@b.Title</h2>
-        @Html.ActionLink("Edit Post", "Edit", new { ID=b.ID})
-    </div>
-}*@
+
+
 <br />
 <p id="addLink">@Html.ActionLink("Add Post", "Add", "Blog")</p>
 

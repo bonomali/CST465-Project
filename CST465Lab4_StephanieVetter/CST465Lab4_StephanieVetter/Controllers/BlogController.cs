@@ -1,4 +1,5 @@
 ﻿using CST465Lab4_StephanieVetter.Code.Repositories;
+using CST465Lab4_StephanieVetter.Code.ExtensionMethods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,14 @@ namespace CST465Lab4_StephanieVetter
         public ActionResult Index()
         {
             List<BlogPost> b = _blog.GetList();
+
+            return View(b);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string filter)
+        {
+            List<BlogPost> b = _blog.GetListByContent(filter);
 
             return View(b);
         }
@@ -52,6 +61,7 @@ namespace CST465Lab4_StephanieVetter
 
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult Edit(int id)
         {
             BlogPost b = new BlogPost();
@@ -65,7 +75,7 @@ namespace CST465Lab4_StephanieVetter
             
             return View(model);
         }
-
+        [Authorize]
         [HttpPost]
          public ActionResult Edit(BlogPostModel model)
         {

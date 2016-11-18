@@ -25,6 +25,23 @@
             <li id="contactLink">@Html.ActionLink("Contact Us", "Index", "Contact")</li>
         </ul>
     </nav>
+    <div>
+        @if(User.Identity.IsAuthenticated)
+        {
+            <div>Welcome, @User.Identity.Name</div>
+
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+            }
+        }
+
+        @if(!User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Login","Login", "Account")
+        }
+    </div>
     <main>@RenderBody()</main>
     <footer>@RenderSection("footer", required: false)</footer>
     

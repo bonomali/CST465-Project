@@ -3,6 +3,11 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc5;
 using CST465Lab4_StephanieVetter;
 using CST465Lab4_StephanieVetter.Code.Repositories;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using CST465Lab4_StephanieVetter.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using CST465Lab4_StephanieVetter.Controllers;
 
 namespace CST465Lab4_StephanieVetter
 {
@@ -19,6 +24,12 @@ namespace CST465Lab4_StephanieVetter
 
             container.RegisterType<IDataEntityRepository<BlogPost>, BlogFileRepository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+
+            container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
+            container.RegisterType<UserManager<ApplicationUser>>(new HierarchicalLifetimeManager());
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new HierarchicalLifetimeManager());
+            container.RegisterType<IRoleStore<ApplicationRole, string>, RoleStore<ApplicationRole>>(new HierarchicalLifetimeManager());
+            container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }
