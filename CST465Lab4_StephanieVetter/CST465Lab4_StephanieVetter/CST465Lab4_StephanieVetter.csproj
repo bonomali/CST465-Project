@@ -260,8 +260,6 @@
     <Content Include="Views\Blog\SingleBlogPostView.cshtml" />
     <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
     <Content Include="App_Data\blogLab7.json" />
-    <Content Include="ConnectionStrings.config" />
-    <Content Include="Smtp.config" />
     <Content Include="Views\Account\AwaitingConfirmation.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -278,6 +276,8 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\Roles.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="Smtp.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
