@@ -22,7 +22,7 @@ namespace CST465Lab4_StephanieVetter
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterType<IDataEntityRepository<BlogPost>, BlogFileRepository>();
+            container.RegisterType<IDataEntityRepository<BlogPost>, BlogDBRepository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
