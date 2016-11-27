@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Insert Categories";
+}
+@model CategoriesModel
+
+<h1>Insert A Category</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <br />
+    <button type="submit">Submit</button>
+}

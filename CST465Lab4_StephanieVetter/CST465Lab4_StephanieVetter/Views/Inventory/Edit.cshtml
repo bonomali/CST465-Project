@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit Inventory";
+}
+@model InventoryModel
+
+<h1>Edit Inventory Item</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <br />
+    <button type="submit">Submit</button>
+}
+

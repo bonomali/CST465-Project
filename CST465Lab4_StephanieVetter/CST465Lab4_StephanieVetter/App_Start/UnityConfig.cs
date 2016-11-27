@@ -24,6 +24,8 @@ namespace CST465Lab4_StephanieVetter
 
             container.RegisterType<IDataEntityRepository<BlogPost>, BlogDBRepository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            container.RegisterType<IDataEntityRepository<Inventory>, InventoryRepository>();
+            container.RegisterType<IDataEntityRepository<Category>, CategoriesRepository>();
 
             container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
             container.RegisterType<UserManager<ApplicationUser>>(new HierarchicalLifetimeManager());

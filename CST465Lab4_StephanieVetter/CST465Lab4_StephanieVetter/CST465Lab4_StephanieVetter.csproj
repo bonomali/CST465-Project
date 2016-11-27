@@ -206,12 +206,18 @@
     <Compile Include="Code\Repositories\BlogDBRepository.cs" />
     <Compile Include="Code\Repositories\BlogFileRepository.cs" />
     <Compile Include="Code\Repositories\BlogPost.cs" />
+    <Compile Include="Code\Repositories\CategoriesRepository.cs" />
+    <Compile Include="Code\Repositories\Category.cs" />
+    <Compile Include="Code\Repositories\Inventory.cs" />
+    <Compile Include="Code\Repositories\InventoryRepository.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\MidtermController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +231,8 @@
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />
+    <Compile Include="Models\Inventory\CategoriesModel.cs" />
+    <Compile Include="Models\Inventory\InventoryModel.cs" />
     <Compile Include="Models\Midterm\LongAnswerQuestion.cs" />
     <Compile Include="Models\Midterm\MultipleChoiceQuestion.cs" />
     <Compile Include="Models\Midterm\ShortAnswerQuestion.cs" />
@@ -278,6 +286,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="ConnectionStrings.config" />
     <Content Include="Smtp.config" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Categories\Insert.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Inventory\Index.cshtml" />
+    <Content Include="Views\Inventory\Edit.cshtml" />
+    <Content Include="Views\Inventory\Add.cshtml" />
+    <Content Include="Views\Inventory\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
