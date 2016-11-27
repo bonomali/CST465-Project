@@ -28,7 +28,8 @@ namespace CST465Lab4_StephanieVetter.Controllers
 
             return File(image.ProductImage, image.ProductName);
         }
-        // [Authorize]
+
+        [Authorize]
         public ActionResult ViewItem(int id)
         {
             Inventory inv = new Inventory();
@@ -36,7 +37,8 @@ namespace CST465Lab4_StephanieVetter.Controllers
 
             return View(inv);
         }
-        //      [Authorize]
+
+        [Authorize]
         public ActionResult Add()
         {
             InventoryModel inv = new InventoryModel();
@@ -60,7 +62,16 @@ namespace CST465Lab4_StephanieVetter.Controllers
         [HttpPost]
         public ActionResult Add(InventoryModel model)
         {
-            if(!ModelState.IsValid)
+            List<Category> temp = new List<Category>();
+            CategoriesRepository repo = new CategoriesRepository();
+            temp = repo.GetList();
+
+            model.categories = new List<SelectListItem>();
+            foreach (Category c in temp)
+            {
+                model.categories.Add(new SelectListItem { Text = c.CategoryName, Value = c.ID.ToString() });
+            }
+            if (!ModelState.IsValid || model.ProductImage == null)
             {
                 return View(model);
             }
@@ -75,21 +86,27 @@ namespace CST465Lab4_StephanieVetter.Controllers
                     model.ProductImage.InputStream.CopyTo(memoryStream);
                     imageBytes = memoryStream.ToArray();
                 }
+
+                inv.ProductImage = imageBytes;
                 inv.ID = model.ID;
                 inv.ProductName = model.ProductName;
                 inv.ProductCode = model.ProductCode;
                 inv.CategoryID = model.CategoryID;
-                inv.ProductImage = imageBytes;
                 inv.ProductDescription = model.ProductDescription;
                 inv.Price = model.Price;
                 inv.Quantity = model.Quantity;
-               
+
+                if (model.ProductDescription == null)
+                    inv.ProductDescription = "";
+                else
+                    inv.ProductDescription = model.ProductDescription;
+
                 _repo.Save(inv);
             }
             return RedirectToAction("Index");
         }
 
-  //      [Authorize]
+        [Authorize]
         public ActionResult Edit(int id)
         {
             Inventory inv = new Inventory();
@@ -123,7 +140,16 @@ namespace CST465Lab4_StephanieVetter.Controllers
         [HttpPost]
         public ActionResult Edit(InventoryModel model)
         {
-            if(!ModelState.IsValid)
+            List<Category> temp = new List<Category>();
+            CategoriesRepository repo = new CategoriesRepository();
+            temp = repo.GetList();
+
+            model.categories = new List<SelectListItem>();
+            foreach (Category c in temp)
+            {
+                model.categories.Add(new SelectListItem { Text = c.CategoryName, Value = c.ID.ToString() });
+            }
+            if (!ModelState.IsValid || model.ProductImage.ContentLength < 1)
             {
                 return View(model);
             }
@@ -131,28 +157,36 @@ namespace CST465Lab4_StephanieVetter.Controllers
             if (model.ProductImage != null && model.ProductImage.ContentLength < 50000)
             {
                 Inventory inv = new Inventory();
+
                 byte[] imageBytes;
 
                 using (var memoryStream = new MemoryStream())
                 {
                     model.ProductImage.InputStream.CopyTo(memoryStream);
                     imageBytes = memoryStream.ToArray();
-                }
+                 }
+
+                inv.ProductImage = imageBytes;
                 inv.ID = model.ID;
                 inv.ProductName = model.ProductName;
                 inv.ProductCode = model.ProductCode;
                 inv.CategoryID = model.CategoryID;
-                inv.ProductImage = imageBytes;
                 inv.ProductDescription = model.ProductDescription;
                 inv.Price = model.Price;
                 inv.Quantity = model.Quantity;
+
+                if (model.ProductDescription == null)
+                    inv.ProductDescription = "";
+                else
+                    inv.ProductDescription = model.ProductDescription;
 
                 _repo.Save(inv);
             }
 
             return RedirectToAction("Index");
         }
-  //      [Authorize]
+
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Inventory inv = new Inventory();

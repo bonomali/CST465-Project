@@ -26,6 +26,7 @@ namespace CST465Lab4_StephanieVetter
 
         public string ProductDescription { get; set; }
 
+        [Required]
         public HttpPostedFileWrapper ProductImage { get; set; }
 
         [Required]

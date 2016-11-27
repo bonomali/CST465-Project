@@ -24,7 +24,7 @@ namespace CST465Lab4_StephanieVetter.Controllers
             return View(categories);
         }
 
- //     [Authorize]
+       [Authorize]
         public ActionResult Insert()
         {
             CategoriesModel cat = new CategoriesModel();
@@ -49,7 +49,8 @@ namespace CST465Lab4_StephanieVetter.Controllers
 
             return RedirectToAction("Index");
         }
- //       [Authorize]
+
+        [Authorize]
         public ActionResult Edit(int id)
         {
             Category cat = new Category();
@@ -81,7 +82,7 @@ namespace CST465Lab4_StephanieVetter.Controllers
             return RedirectToAction("Index");
         }
 
-  //      [Authorize]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             Category cat = new Category();

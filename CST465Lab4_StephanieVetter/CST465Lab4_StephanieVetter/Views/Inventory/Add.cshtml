@@ -7,7 +7,7 @@
 <h1>Add Inventory Items</h1>
 @if (Model.categories.Count > 0)
 { 
-    Html.ValidationSummary(false);
+    Html.ValidationSummary(true);
     using (Html.BeginForm("Add", "Inventory", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
     @Html.HiddenFor(m => m.ID)
