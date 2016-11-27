@@ -21,7 +21,7 @@ namespace CST465Lab4_StephanieVetter.Code.Repositories
                     command.CommandText = "SELECT * FROM Product WHERE ID=@ID";
                     command.Parameters.AddWithValue("@ID", id);
                     command.Connection.Open();
-
+                    
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -32,8 +32,8 @@ namespace CST465Lab4_StephanieVetter.Code.Repositories
                             item.CategoryID = (int)reader["CategoryID"];
                             item.ProductDescription = reader["ProductDescription"].ToString();
                             item.ProductImage = (byte[])reader["ProductImage"];
-                            item.Money = (float)reader["Money"];
-                            item.Quantity = (int)reader["Quanity"];
+                            item.Price = Convert.ToDecimal(reader["Price"]);
+                            item.Quantity = (int)reader["Quantity"];
                         }
                     }
                 }
@@ -65,8 +65,8 @@ namespace CST465Lab4_StephanieVetter.Code.Repositories
                             item.CategoryID = (int)reader["CategoryID"];
                             item.ProductDescription = reader["ProductDescription"].ToString();
                             item.ProductImage = (byte[])reader["ProductImage"];
-                            item.Money = (float)reader["Money"];
-                            item.Quantity = (int)reader["Quanity"];
+                            item.Price = Convert.ToDecimal(reader["Price"]);
+                            item.Quantity = (int)reader["Quantity"];
 
                             inventory.Add(item);
                         }
@@ -85,11 +85,11 @@ namespace CST465Lab4_StephanieVetter.Code.Repositories
                     command.Connection = connection;
                     if (entity.ID == 0)
                     {
-                        command.CommandText = "INSERT INTO Product(ProductCode, ProductName, CategoryID, ProductDescription, ProductImage, Money, Quantity) VALUES(@Code, @PName, @CID, @Description, @Image, @Money, @Quantity)";
+                        command.CommandText = "INSERT INTO Product(ProductCode, ProductName, CategoryID, ProductDescription, ProductImage, Price, Quantity) VALUES(@Code, @PName, @CID, @Description, @Image, @Price, @Quantity)";
                     }
                     else
                     {
-                        command.CommandText = "UPDATE Product SET ProductCode=@Code, ProductName=@PName, CategoryID=@CID, ProductDescription=@Description, ProductImage=@Image, Money=@Money, Quantity=@Quantity WHERE ID=@ID";
+                        command.CommandText = "UPDATE Product SET ProductCode=@Code, ProductName=@PName, CategoryID=@CID, ProductDescription=@Description, ProductImage=@Image, Price=@Price, Quantity=@Quantity WHERE ID=@ID";
                         command.Parameters.AddWithValue("@ID", entity.ID);
                     }
                     command.CommandType = CommandType.Text;
@@ -98,8 +98,22 @@ namespace CST465Lab4_StephanieVetter.Code.Repositories
                     command.Parameters.AddWithValue("@CID", entity.CategoryID);
                     command.Parameters.AddWithValue("@Description", entity.ProductDescription);
                     command.Parameters.AddWithValue("@Image", entity.ProductImage);
-                    command.Parameters.AddWithValue("@Money", entity.Money);
+                    command.Parameters.AddWithValue("@Price", entity.Price);
                     command.Parameters.AddWithValue("@Quantity", entity.Quantity);
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void Delete(Inventory entity)
+        {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            {
+                using(SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM Product WHERE ID=@ID";
+                    command.Parameters.AddWithValue("@ID", entity.ID);
                     command.Connection.Open();
                     command.ExecuteNonQuery();
                 }

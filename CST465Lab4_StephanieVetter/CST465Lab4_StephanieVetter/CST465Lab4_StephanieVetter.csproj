@@ -294,6 +294,7 @@
     <Content Include="Views\Inventory\Edit.cshtml" />
     <Content Include="Views\Inventory\Add.cshtml" />
     <Content Include="Views\Inventory\Delete.cshtml" />
+    <Content Include="Views\Inventory\ViewItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

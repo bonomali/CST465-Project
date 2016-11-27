@@ -13,7 +13,7 @@ namespace CST465Lab4_StephanieVetter
         public int CategoryID { get; set; }
         public string ProductDescription { get; set; }
         public byte[] ProductImage { get; set; }
-        public float Money { get; set; }
+        public Decimal Price { get; set; }
         public int Quantity { get; set; }
     }
 }

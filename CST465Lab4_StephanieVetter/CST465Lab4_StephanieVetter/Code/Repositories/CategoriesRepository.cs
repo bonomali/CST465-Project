@@ -87,5 +87,34 @@ namespace CST465Lab4_StephanieVetter.Code.Repositories
                 }
             }
         }
+        public int Delete(Category entity)
+        {
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    int count = 0;
+                    command.Connection = connection;
+                    command.CommandText = "SELECT COUNT(*) FROM Product WHERE CategoryID=@ID";
+                    command.Parameters.AddWithValue("@ID", entity.ID);
+                    command.Connection.Open();
+                    count = (int)command.ExecuteScalar();
+                    command.Connection.Close();
+
+                    if (count > 0)
+                        return 1;
+                }      
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM Category WHERE ID=@ID";
+                    command.Parameters.AddWithValue("@ID", entity.ID);
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+
+                    return 0;
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,14 @@
+﻿@model Inventory
+
+<h1>@Model.ProductName</h1>
+<div>
+    <img src='@Url.Action("Show", new { @id = Model.ID })' alt="@Model.ProductName" />
+</div>
+<p>
+    Product Code:  @Model.ProductCode <br />
+    Category Code: @Model.CategoryID <br />
+    Description:   @Model.ProductDescription <br />
+    Price:         @Model.Price <br />
+    Quantity:      @Model.Quantity <br />
+</p>
+@Html.ActionLink("Back", "Index", "Inventory")

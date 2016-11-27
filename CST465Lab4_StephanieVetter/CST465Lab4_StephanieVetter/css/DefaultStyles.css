@@ -21,6 +21,8 @@ h3{font-weight:100; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet
 #blogLinks li{margin-left: -35px; list-style-type:none;}
 #blogLinks li a{font-size: 25px; color:indigo; padding: 2px 0; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
 p#addLink{font-size: 20px; color:#891563; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+label{ display:inline-block; width: 140px; text-align:right; }
+.scaledImg { max-width: 150px; height:auto; }
 @media only screen and (max-width: 1000px) {
      #companyLogo img{width:50px; height:auto;}
 }

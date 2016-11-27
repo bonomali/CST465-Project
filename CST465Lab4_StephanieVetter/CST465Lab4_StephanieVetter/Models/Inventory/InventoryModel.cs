@@ -29,9 +29,10 @@ namespace CST465Lab4_StephanieVetter
         public HttpPostedFileWrapper ProductImage { get; set; }
 
         [Required]
-        public float Money { get; set; }
+        public Decimal Price { get; set; }
 
         [Required]
         public int Quantity { get; set; }
+        public List<SelectListItem> categories { get; set; }
     }
 }

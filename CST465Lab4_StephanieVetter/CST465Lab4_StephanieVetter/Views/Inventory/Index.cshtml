@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Inventory";
 }
-@model List<Inventory >
+@model List<Inventory>
 
 <h1>Inventory Items</h1>
 
@@ -11,15 +11,11 @@
     foreach (Inventory i in Model)
     {
         <h2>@i.ProductName</h2>
-        <div>
-            <img class="thumbnail" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
+        <div>.
+            <img class="scaledImg" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
         </div>
-        <p>Product Code:  @i.ProductCode
-           Category Code: @i.CategoryID
-           Description:   @i.ProductDescription
-           Price:         @i.Money;
-           Quantity:      @i.Quantity;
-        </p>
+        @Html.ActionLink("View Item Details", "ViewItem", new { id = i.ID })
+        <br />
         @Html.ActionLink("Edit Item", "Edit", new { id = i.ID } )
         <br />
         @Html.ActionLink("Delete Item", "Delete", new { id = i.ID })

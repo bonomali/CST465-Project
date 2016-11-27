@@ -22,12 +22,39 @@ namespace CST465Lab4_StephanieVetter.Controllers
             List<Inventory> inventory = _repo.GetList();
             return View(inventory);
         }
-  //      [Authorize]
+        public ActionResult Show(int id)
+        {
+            Inventory image = _repo.Get(id);
+
+            return File(image.ProductImage, image.ProductName);
+        }
+        // [Authorize]
+        public ActionResult ViewItem(int id)
+        {
+            Inventory inv = new Inventory();
+            inv = _repo.Get(id);
+
+            return View(inv);
+        }
+        //      [Authorize]
         public ActionResult Add()
         {
             InventoryModel inv = new InventoryModel();
 
-            return View(inv);
+            List<Category> temp = new List<Category>();
+            CategoriesRepository repo = new CategoriesRepository();
+            temp = repo.GetList();
+
+            if (temp.Count() > 0)
+            {
+                inv.categories = new List<SelectListItem>();
+                foreach(Category c in temp)
+                {
+                    inv.categories.Add(new SelectListItem { Text = c.CategoryName, Value = c.ID.ToString() });
+                }
+                return View(inv);
+            }
+            return View();
         }
         
         [HttpPost]
@@ -38,7 +65,7 @@ namespace CST465Lab4_StephanieVetter.Controllers
                 return View(model);
             }
 
-            if (model.ProductImage != null && model.ProductImage.ContentLength < 5000)
+            if (model.ProductImage != null && model.ProductImage.ContentLength < 50000)
             {
                 Inventory inv = new Inventory();
                 byte[] imageBytes;
@@ -54,12 +81,11 @@ namespace CST465Lab4_StephanieVetter.Controllers
                 inv.CategoryID = model.CategoryID;
                 inv.ProductImage = imageBytes;
                 inv.ProductDescription = model.ProductDescription;
-                inv.Money = model.Money;
+                inv.Price = model.Price;
                 inv.Quantity = model.Quantity;
                
                 _repo.Save(inv);
             }
-           
             return RedirectToAction("Index");
         }
 
@@ -70,17 +96,28 @@ namespace CST465Lab4_StephanieVetter.Controllers
             inv = _repo.Get(id);
 
             InventoryModel model = new InventoryModel();
-           
-            model.ProductImage = inv.ProductImage;
+            Stream stream = new MemoryStream(inv.ProductImage);
+            //HttpPostedFileWrapper file = new HttpPostedFileWrapper(stream);
+            //model.ProductImage = stream;
             model.ID = inv.ID;
             model.ProductName = inv.ProductName;
             model.ProductCode = inv.ProductCode;
             model.CategoryID = inv.CategoryID;
             model.ProductDescription = inv.ProductDescription;
-            model.Money = inv.Money;
+            model.Price = inv.Price;
             model.Quantity = inv.Quantity;
+            
+            List<Category> temp = new List<Category>();
+            CategoriesRepository repo = new CategoriesRepository();
+            temp = repo.GetList();
 
+            model.categories = new List<SelectListItem>();
+            foreach (Category c in temp)
+            {
+                model.categories.Add(new SelectListItem { Text = c.CategoryName, Value = c.ID.ToString() });
+            }
             return View(model);
+           
         }
 
         [HttpPost]
@@ -91,7 +128,7 @@ namespace CST465Lab4_StephanieVetter.Controllers
                 return View(model);
             }
 
-            if (model.ProductImage != null && model.ProductImage.ContentLength < 5000)
+            if (model.ProductImage != null && model.ProductImage.ContentLength < 50000)
             {
                 Inventory inv = new Inventory();
                 byte[] imageBytes;
@@ -107,7 +144,7 @@ namespace CST465Lab4_StephanieVetter.Controllers
                 inv.CategoryID = model.CategoryID;
                 inv.ProductImage = imageBytes;
                 inv.ProductDescription = model.ProductDescription;
-                inv.Money = model.Money;
+                inv.Price = model.Price;
                 inv.Quantity = model.Quantity;
 
                 _repo.Save(inv);
@@ -116,9 +153,13 @@ namespace CST465Lab4_StephanieVetter.Controllers
             return RedirectToAction("Index");
         }
   //      [Authorize]
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View();
+            Inventory inv = new Inventory();
+            inv = _repo.Get(id);
+            _repo.Delete(inv);
+
+            return RedirectToAction("Index");
         }
     }
 }

@@ -82,9 +82,16 @@ namespace CST465Lab4_StephanieVetter.Controllers
         }
 
   //      [Authorize]
-        public ActionResult Delete()
+        public ActionResult Delete(int id)
         {
-            return View();
+            Category cat = new Category();
+            int count = 0;
+            cat = _repo.Get(id);
+            count = _repo.Delete(cat);
+            if(count.Equals(1))
+                return View("Delete");
+
+            return RedirectToAction("Index");
         }
     }
 }
