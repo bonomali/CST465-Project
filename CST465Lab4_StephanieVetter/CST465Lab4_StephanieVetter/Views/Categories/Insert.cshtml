@@ -4,11 +4,13 @@
 }
 @model CategoriesModel
 
-<h1>Insert A Category</h1>
+<div class="pageContent">
+    <h1>Insert A Category</h1>
 
-@using (Html.BeginForm())
-{
-    @Html.EditorForModel()
-    <br />
-    <button type="submit">Submit</button>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.EditorForModel()
+        <br />
+        <button type="submit">Submit</button>
+    }
+</div>

@@ -2,25 +2,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Contact Page";
 }
-@section header{
-    <p>We want to hear from you!</p>
-}
-@section footer{
-    <p>Contact Us!</p>
-} 
+ 
 @model ContactModel
 
-<h1>Contact Us</h1>
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Name)
-    @Html.TextBoxFor(m => m.Name)
-    @Html.LabelFor(m => m.PhoneNumber)
-    @Html.TextBoxFor(m => m.PhoneNumber)
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
-    @Html.LabelFor(m => m.Message)
-    @Html.TextAreaFor(m => m.Message)
-    <br />
-    <button type="submit">Submit</button>
-}
+<div class="pageContent">
+    <h1>Contact Us</h1>
+    <div id="contactInfo">
+        <p>
+            Phone: (800)333-3333 <br />
+            Fax:   (541)444-4444 <br />
+            Email: penandseller@gmail.com <br />
+            Address:  1221 ThisWay Ave.  Klamath Falls, OR 97601 <br />
+        </p>
+        <br />
+    </div>
+
+    <h2>Send Us A Message!</h2>
+    @using (Html.BeginForm())
+    {
+        <span class="validation">@Html.ValidationSummary()</span>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+        <br />
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber)
+        <br />
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+        <br /><br />
+        @Html.LabelFor(m => m.Message)
+        @Html.TextAreaFor(m => m.Message)
+        <br /><br />
+        <button type="submit">Submit</button>
+    }
+</div>    

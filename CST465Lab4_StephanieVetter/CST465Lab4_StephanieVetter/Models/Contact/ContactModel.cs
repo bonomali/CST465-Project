@@ -12,7 +12,7 @@ namespace CST465Lab4_StephanieVetter
         public string Name { get; set; }
 
         [Required]
-        //[RegularExpression(@"(\d{3}\)|\d{3}\-)\d{3}\-\d{4}")]
+        [RegularExpression(@"(\(\d{3}\)|\d{3}\-)\d{3}\-\d{4}", ErrorMessage = "Phone Number Format: (000)000-0000")]
         public string PhoneNumber { get; set; }
 
         [Required]

@@ -24,5 +24,9 @@ namespace CST465Lab4_StephanieVetter
             }
             return RedirectToAction("ContactConfirmed");
         }
+        public ActionResult ContactConfirmed()
+        {
+            return View();
+        }
     }
 }

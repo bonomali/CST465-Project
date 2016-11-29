@@ -3,21 +3,23 @@
 }
 @model List<Category>
 
-<h1>Categoies</h1>
+<div class="pageContent">
+    <h1>Categoies</h1>
 
-@if (Model.Count > 0)
-{
-    foreach (Category i in Model)
+    @if (Model.Count > 0)
     {
-        <h2>@i.CategoryName</h2>
+        foreach (Category i in Model)
+        {
+            <h2>@i.CategoryName</h2>
 
-        @Html.ActionLink("Edit Category", "Edit", new { id = i.ID })
-        <br />
-        @Html.ActionLink("Delete Category", "Delete", new { id = i.ID })
-        <br />
+            @Html.ActionLink("Edit Category", "Edit", new { id = i.ID })
+            <br />
+            @Html.ActionLink("Delete Category", "Delete", new { id = i.ID })
+            <br />
+        }
     }
-}
-<div>
-    <br /><br />
-    @Html.ActionLink("Insert Category", "Insert", "Categories")
+    <div>
+        <br /><br />
+        @Html.ActionLink("Insert Category", "Insert", "Categories")
+    </div>
 </div>

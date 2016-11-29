@@ -4,39 +4,41 @@
 }
 @model InventoryModel
 
-<h1>Add Inventory Items</h1>
-@if (Model.categories.Count > 0)
-{ 
-    Html.ValidationSummary(true);
-    using (Html.BeginForm("Add", "Inventory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+<div class="pageContent">
+    <h1>Add Inventory Items</h1>
+    @if (Model.categories.Count > 0)
     {
-    @Html.HiddenFor(m => m.ID)
-    @Html.LabelFor(m => m.ProductName)
-    @Html.EditorFor(m => m.ProductName)
-    <br />
-    @Html.LabelFor(m => m.ProductCode)
-    @Html.EditorFor(m => m.ProductCode)
-    <br />
-    @Html.LabelFor(m => m.CategoryID)
-    @Html.DropDownListFor(
+        Html.ValidationSummary(true);
+        using (Html.BeginForm("Add", "Inventory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(m => m.ID)
+            @Html.LabelFor(m => m.ProductName)
+            @Html.EditorFor(m => m.ProductName)
+            <br />
+            @Html.LabelFor(m => m.ProductCode)
+            @Html.EditorFor(m => m.ProductCode)
+            <br />
+            @Html.LabelFor(m => m.CategoryID)
+            @Html.DropDownListFor(
     m => m.CategoryID,
     Model.categories)
-    <br />
-    @Html.LabelFor(m => m.ProductDescription)
-    @Html.EditorFor(m => m.ProductDescription)
-    <br />
-    @Html.LabelFor(m => m.Price)
-    @Html.EditorFor(m => m.Price)
-    <br />
-    @Html.LabelFor(m => m.Quantity)
-    @Html.EditorFor(m => m.Quantity)
-    <br />
-    <input type="file" name="ProductImage"/>
-    <br /><br />
-    <button type="submit">Save Item</button>
+            <br />
+            @Html.LabelFor(m => m.ProductDescription)
+            @Html.EditorFor(m => m.ProductDescription)
+            <br />
+            @Html.LabelFor(m => m.Price)
+            @Html.EditorFor(m => m.Price)
+            <br />
+            @Html.LabelFor(m => m.Quantity)
+            @Html.EditorFor(m => m.Quantity)
+            <br />
+            <input type="file" name="ProductImage" />
+            <br /><br />
+            <button type="submit">Save Item</button>
+        }
     }
-}
-@if(Model.categories.Count() <= 0)
-{
-    <h2>Need to add Categories before Inventory items</h2>
-}
+    @if (Model.categories.Count() <= 0)
+    {
+        <h2>Need to add Categories before Inventory items</h2>
+    }
+</div>

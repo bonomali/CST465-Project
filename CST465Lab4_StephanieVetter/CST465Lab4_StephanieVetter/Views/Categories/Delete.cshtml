@@ -3,5 +3,8 @@
     ViewBag.Title = "Delete Categories";
 }
 
-<h1>Unable to delete. Products exist in category.</h1>
-@Html.ActionLink("Back", "Index", "Categories")
+<div class="pageContent">
+    <h1>Unable to delete</h1>
+    <h2>Products exist in category</h2>
+    @Html.ActionLink("Back", "Index", "Categories")
+</div>

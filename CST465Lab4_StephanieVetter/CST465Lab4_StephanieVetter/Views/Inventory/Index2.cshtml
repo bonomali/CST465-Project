@@ -1,38 +1,40 @@
 ﻿@model List<Inventory>
 
-<h1>Inventory Items</h1>
+<div class="pageContent">
+    <h1>Inventory Items</h1>
 
-@using (Html.BeginForm())
-{
-    <label for="uxFilter">Search for Items: </label>
-    <input type="text" id="uxFilter" name="filter" />
-    <button type="submit">Search</button>
-}
-@using (Html.BeginForm("Index2", "Inventory", FormMethod.Post))
-{
-    <label for="uxFilter">Search by Category: </label>
-    <input type="text" id="uxFilter" name="filter" />
-    <button type="submit" value="Index2">Search</button>
-}
-
-@if (Model.Count > 0)
-{
-    foreach (Inventory i in Model)
+    @using (Html.BeginForm())
     {
-        <h2>@i.ProductName</h2>
-        <div>
-            .
-            <img class="scaledImg" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
-        </div>
-        @Html.ActionLink("View Item Details", "ViewItem", new { id = i.ID })
-        <br />
-        @Html.ActionLink("Edit Item", "Edit", new { id = i.ID })
-        <br />
-        @Html.ActionLink("Delete Item", "Delete", new { id = i.ID })
-        <br />
+        <label for="uxFilter">Search for Items: </label>
+        <input type="text" id="uxFilter" name="filter" />
+        <button type="submit">Search</button>
     }
-}
-<div>
-    <br /><br />
-    @Html.ActionLink("Add Inventory", "Add", "Inventory")
+    @using (Html.BeginForm("Index2", "Inventory", FormMethod.Post))
+    {
+        <label for="uxFilter">Search by Category: </label>
+        <input type="text" id="uxFilter" name="filter" />
+        <button type="submit" value="Index2">Search</button>
+    }
+
+    @if (Model.Count > 0)
+    {
+        foreach (Inventory i in Model)
+        {
+            <h2>@i.ProductName</h2>
+            <div>
+                .
+                <img class="scaledImg" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
+            </div>
+            @Html.ActionLink("View Item Details", "ViewItem", new { id = i.ID })
+            <br />
+            @Html.ActionLink("Edit Item", "Edit", new { id = i.ID })
+            <br />
+            @Html.ActionLink("Delete Item", "Delete", new { id = i.ID })
+            <br />
+        }
+    }
+    <div>
+        <br /><br />
+        @Html.ActionLink("Add Inventory", "Add", "Inventory")
+    </div>
 </div>

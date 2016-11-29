@@ -5,12 +5,13 @@
 
 @model List<BlogPost>
 
-<h1>View/Edit Blogs</h1>
-@Html.Partial("~/Views/Shared/_BlogPostLinkList.cshtml", Model)
+<div class="pageContent">
+    <h1>View/Edit Blogs</h1>
+    @Html.Partial("~/Views/Shared/_BlogPostLinkList.cshtml", Model)
 
 
 
-<br />
-<p id="addLink">@Html.ActionLink("Add Post", "Add", "Blog")</p>
-
+    <br />
+    <p id="addLink">@Html.ActionLink("Add Post", "Add", "Blog")</p>
+</div>
 
