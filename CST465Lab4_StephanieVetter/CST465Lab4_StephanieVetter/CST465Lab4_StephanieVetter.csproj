@@ -200,7 +200,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
+    <Compile Include="Code\DataObjects\ContactInfo.cs" />
+    <Compile Include="Code\ExtensionMethods\RepositoryExtensions.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
     <Compile Include="Code\Interfaces\IDataEntityRepository.cs" />
     <Compile Include="Code\Repositories\BlogDBRepository.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\Account\ResetPasswordViewModel.cs" />
     <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\Contact\ContactModel.cs" />
     <Compile Include="Models\HomePage\HomePageModel.cs" />
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
@@ -298,6 +300,8 @@
     <Content Include="Views\Inventory\ViewItem.cshtml" />
     <Content Include="Views\Shared\_RecentBlogs.cshtml" />
     <Content Include="Views\Shared\_FeaturedInventoryItems.cshtml" />
+    <Content Include="Views\Inventory\Index2.cshtml" />
+    <Content Include="Views\Contact\ContactConfirmed.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -306,7 +310,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\DataObjects\" />
     <Folder Include="HTMLHelpers\" />
     <Folder Include="js\" />
   </ItemGroup>

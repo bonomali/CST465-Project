@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CST465Lab4_StephanieVetter.Code.Repositories;
+using CST465Lab4_StephanieVetter.Code.ExtensionMethods;
 using System.IO;
 
 namespace CST465Lab4_StephanieVetter.Controllers
@@ -21,6 +22,32 @@ namespace CST465Lab4_StephanieVetter.Controllers
         {
             List<Inventory> inventory = _repo.GetList();
             return View(inventory);
+        }
+        [HttpPost]
+        public ActionResult Index(string filter)
+        {
+            List<Inventory> i = _repo.GetListByName(filter);
+
+            return View(i);
+        }
+        [HttpPost]
+        public ActionResult Index2(string filter)
+        {
+            CategoriesRepository repo = new CategoriesRepository();
+            List<Category> cat = repo.GetList();
+            Category c = new Category();
+            bool found = false;
+
+            for (int j = 0; j < cat.Count() && found == false; j++)
+            {
+                if (cat[j].CategoryName.ToUpper() == filter.ToUpper())
+                {
+                    c = cat[j];
+                    found = true;
+                }
+            }
+            List<Inventory> i = _repo.GetListByCategory(c);
+            return View(i);
         }
         public ActionResult Show(int id)
         {

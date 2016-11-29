@@ -8,6 +8,19 @@
 @section footer{
     <p>Contact Us!</p>
 } 
-<h1>Contact Content</h1>
-<h2>h2 styling</h2>
-<h3>h3 styling</h3>
+@model ContactModel
+
+<h1>Contact Us</h1>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+    @Html.LabelFor(m => m.PhoneNumber)
+    @Html.TextBoxFor(m => m.PhoneNumber)
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    @Html.LabelFor(m => m.Message)
+    @Html.TextAreaFor(m => m.Message)
+    <br />
+    <button type="submit">Submit</button>
+}

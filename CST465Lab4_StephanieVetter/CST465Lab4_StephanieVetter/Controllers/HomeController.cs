@@ -35,5 +35,11 @@ namespace CST465Lab4_StephanieVetter
 
             return View(model);
         }
+        public ActionResult Show(int id)
+        {
+            Inventory image = _irepo.Get(id);
+
+            return File(image.ProductImage, image.ProductName);
+        }
     }
 }

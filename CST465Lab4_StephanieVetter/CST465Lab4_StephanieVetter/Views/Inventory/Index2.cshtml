@@ -1,8 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Inventory";
-}
-@model List<Inventory>
+﻿@model List<Inventory>
 
 <h1>Inventory Items</h1>
 
@@ -24,12 +20,13 @@
     foreach (Inventory i in Model)
     {
         <h2>@i.ProductName</h2>
-        <div>.
+        <div>
+            .
             <img class="scaledImg" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
         </div>
         @Html.ActionLink("View Item Details", "ViewItem", new { id = i.ID })
         <br />
-        @Html.ActionLink("Edit Item", "Edit", new { id = i.ID } )
+        @Html.ActionLink("Edit Item", "Edit", new { id = i.ID })
         <br />
         @Html.ActionLink("Delete Item", "Delete", new { id = i.ID })
         <br />

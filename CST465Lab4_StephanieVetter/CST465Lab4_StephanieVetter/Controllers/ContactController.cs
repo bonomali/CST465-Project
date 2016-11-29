@@ -11,7 +11,18 @@ namespace CST465Lab4_StephanieVetter
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+            ContactModel model = new ContactModel();
+            
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Index(ContactModel model)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            return RedirectToAction("ContactConfirmed");
         }
     }
 }
