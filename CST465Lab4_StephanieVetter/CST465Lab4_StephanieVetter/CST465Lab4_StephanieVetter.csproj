@@ -228,6 +228,7 @@
     <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\Account\ResetPasswordViewModel.cs" />
     <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\HomePage\HomePageModel.cs" />
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />
@@ -295,6 +296,8 @@
     <Content Include="Views\Inventory\Add.cshtml" />
     <Content Include="Views\Inventory\Delete.cshtml" />
     <Content Include="Views\Inventory\ViewItem.cshtml" />
+    <Content Include="Views\Shared\_RecentBlogs.cshtml" />
+    <Content Include="Views\Shared\_FeaturedInventoryItems.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

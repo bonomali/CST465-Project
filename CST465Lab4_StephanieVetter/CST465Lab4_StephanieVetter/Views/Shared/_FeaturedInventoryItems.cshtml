@@ -1,0 +1,13 @@
+﻿@model HomePageModel
+
+<div class="featuredInventory">
+    <h2>Featured Items</h2>
+    @foreach (Inventory i in Model.inventory)
+    {
+        <h3>@i.ProductName</h3>
+        <div>
+            .
+            <img class="scaledImg" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
+        </div>
+    }
+</div>

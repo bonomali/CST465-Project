@@ -14,8 +14,8 @@ namespace CST465Lab4_StephanieVetter
 
         public BlogController(IDataEntityRepository<BlogPost> repo)
         {
-            //_blog = new BlogDBRepository();
-            _blog = repo;
+            _blog = new BlogDBRepository();
+            //_blog = repo;
         }
         // GET: Blog
         public ActionResult Index()

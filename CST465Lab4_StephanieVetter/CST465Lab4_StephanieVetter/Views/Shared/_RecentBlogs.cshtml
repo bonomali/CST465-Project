@@ -1,0 +1,15 @@
+﻿@model HomePageModel
+
+<div class="recentBlogs">
+    <h2>Recent Blog Posts</h2>
+    @for (int i = 0; i < 3; i++)
+    {
+        <h3>Title: @Model.blogs[i].Title</h3>
+        <p> Author: @Model.blogs[i].Author</p>
+        <p>
+            @{ string timeStamp = Model.blogs[i].Timestamp.ToString(); }
+            @timeStamp
+        </p>
+        <br />
+     }
+</div>

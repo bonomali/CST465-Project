@@ -1,13 +1,17 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home Page";
 }
+@model HomePageModel
+
 @section header{ 
     <p>Home</p>
 }
 @section footer{
     <p>Contact Us!</p>
 }
+<div class="homeContent">
 <h1>Home Content</h1>
-
+@Html.Partial("~/Views/Shared/_FeaturedInventoryItems.cshtml", Model)
+@Html.Partial("~/Views/Shared/_RecentBlogs.cshtml", Model)
+</div>
