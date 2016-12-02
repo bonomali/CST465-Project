@@ -26,7 +26,6 @@
         {
             <h2>@i.ProductName</h2>
             <div>
-                .
                 <img class="scaledImg" src='@Url.Action("Show", new { @id = i.ID })' alt="@i.ProductName" />
             </div>
             @Html.ActionLink("View Item Details", "ViewItem", new { id = i.ID })

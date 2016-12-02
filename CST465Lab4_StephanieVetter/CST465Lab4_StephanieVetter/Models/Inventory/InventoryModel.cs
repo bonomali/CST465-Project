@@ -34,6 +34,8 @@ namespace CST465Lab4_StephanieVetter
 
         [Required]
         public int Quantity { get; set; }
+
+        public int Count { get; set; }  //for stickers, count per sheet
         public List<SelectListItem> categories { get; set; }
     }
 }

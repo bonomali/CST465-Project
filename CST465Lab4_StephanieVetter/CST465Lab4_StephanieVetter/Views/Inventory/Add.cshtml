@@ -8,9 +8,10 @@
     <h1>Add Inventory Items</h1>
     @if (Model.categories.Count > 0)
     {
-        Html.ValidationSummary(true);
         using (Html.BeginForm("Add", "Inventory", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
+            <span class="validation">@Html.ValidationSummary()</span>
+
             @Html.HiddenFor(m => m.ID)
             @Html.LabelFor(m => m.ProductName)
             @Html.EditorFor(m => m.ProductName)
@@ -20,9 +21,9 @@
             <br />
             @Html.LabelFor(m => m.CategoryID)
             @Html.DropDownListFor(
-    m => m.CategoryID,
-    Model.categories)
+                m => m.CategoryID, Model.categories, new { @id = "category" })
             <br />
+            <p id="stickerCount" style="display:none"><label>#Stickers/Sheet</label>@Html.EditorFor(m => m.Count)</p>
             @Html.LabelFor(m => m.ProductDescription)
             @Html.EditorFor(m => m.ProductDescription)
             <br />
@@ -42,3 +43,25 @@
         <h2>Need to add Categories before Inventory items</h2>
     }
 </div>
+@section scripts {
+<script>
+    $(document).ready(function () {
+        $("#category").change(function () {
+            if ($("#category :selected").text() == 'Stickers') {
+                $("#stickerCount").show();
+            }
+            else {
+                $("#stickerCount").hide();
+            }
+        });
+        $("#category").change();
+        $("body").click(function () {
+            $("h1").toggle();
+        });
+        $("label").click(function () {
+            $("body").find("#ProductName").css({ "background-color":"pink" });
+            $("body").find("#ProductName").val("Changed Name");
+        });
+    });
+</script>
+}
